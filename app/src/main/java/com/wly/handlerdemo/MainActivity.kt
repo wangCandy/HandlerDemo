@@ -30,16 +30,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
     class CheckHandler {
         private val mHandlerThread = HandlerThread("卡顿检测")
-
         private var mHandler : Handler
-
-        constructor(){
-            mHandlerThread.start()
-            mHandler = Handler(mHandlerThread.looper)
-        }
 
         private val runnable = Runnable {
             log()
@@ -53,13 +46,18 @@ class MainActivity : AppCompatActivity() {
             mHandler.removeCallbacksAndMessages(null)
         }
 
-        fun log() {
+        private fun log() {
             val sb = StringBuilder()
             val stackTrace = Looper.getMainLooper().thread.stackTrace
             stackTrace.forEach {
-                sb.append("${it}\n")
+                sb.append("$it\n")
             }
             Log.w("TAG", sb.toString())
+        }
+
+        init {
+            mHandlerThread.start()
+            mHandler = Handler(mHandlerThread.looper)
         }
     }
 }
