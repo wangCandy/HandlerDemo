@@ -1,6 +1,6 @@
 
 ###一、前言
-​		提到消息机制大家应该都不陌生，日常开发过程中相信大家都碰到过需要在主线程和子线程之间进行消息通信的操作，例如有些时候我们需要在子线程中进行一些I/O耗时操作，完成之后又需要对UI进行修改，而Android规定UI只能在主线程中进行访问，否则会触发程序异常，此时我们使用Handler就可以在线程间进行切换而不受影响。Android的消息机制主要就是指Handler的运行机制以及Handler所附带的MessageQueue和Looper的工作过程。
+    提到消息机制大家应该都不陌生，日常开发过程中相信大家都碰到过需要在主线程和子线程之间进行消息通信的操作，例如有些时候我们需要在子线程中进行一些I/O耗时操作，完成之后又需要对UI进行修改，而Android规定UI只能在主线程中进行访问，否则会触发程序异常，此时我们使用Handler就可以在线程间进行切换而不受影响。Android的消息机制主要就是指Handler的运行机制以及Handler所附带的MessageQueue和Looper的工作过程。
 
 ![Android消息机制.jpg](https://upload-images.jianshu.io/upload_images/5914751-e15d9087c0b62324.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
